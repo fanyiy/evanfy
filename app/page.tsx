@@ -1,91 +1,54 @@
 import Image from 'next/image'
-import { Inter } from 'next/font/google'
-import styles from './page.module.css'
-
-const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className={styles.center}>
+    <main className="max-w-3xl mb-40 px-4 sm:px-6 mt-16 md:mt-20 lg:mt-32 mx-auto space-y-12">
+      <section className='flex flex-col mx-auto items-center space-y-2'>
         <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
+          src="/avatar.jpg"
+          alt="Evan Yang"
+          width={100}
+          height={100}
+          className="rounded-full mb-3"
         />
-        <div className={styles.thirteen}>
-          <Image src="/thirteen.svg" alt="13" width={40} height={31} priority />
+        <h1 className="text-2xl font-semibold mb-4">Evan Yang</h1>
+        <p className='text-gray-600 text-center'>Welcome to my corner of the internet!</p>
+      </section>
+      <section className='flex flex-col mx-auto items-center gap-12'>
+        <div className='mx-auto'>
+          <h2 className="text-xl font-semibold mb-2 text-center">About Me</h2>
+          <ul className='list-inside'>
+            <li><span className='mr-3'>👨🏻‍🎓</span>AI student at VU Amsterdam</li>
+            <li><span className='mr-3'>👨🏻‍💻</span>Part-time Indie Hacker</li>
+          </ul>
         </div>
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://beta.nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+        <div className='mx-auto'>
+          <h2 className="text-xl font-semibold mb-2">My Products</h2>
+          <ul className='list-inside'>
+            <li><span className='mr-3'>📸</span><a href='https://imginsight.com'>ImgInsight</a></li>
+            <li><span className='mr-3'>💬</span>GPTAssistant</li>
+          </ul>
+        </div>
+        <div className='mx-auto'>
+          <h2 className="text-xl font-semibold mb-2 text-center">Social Media</h2>
+          <ul className='list-inside'>
+            <li><span className='mr-3'>🐦</span><a href='https://twitter.com/__evanyang__'>Twitter</a></li>
+            <li><span className='mr-3'>👨🏻‍💻</span><a href='https://linkedin.com/__evanyang__'>Linkedin</a></li>
+          </ul>
+        </div>
+        <div className='mx-auto'>
+          <h2 className="text-xl font-semibold mb-2 text-center">Photography</h2>
+          <ul className='list-inside'>
+            <li><span className='mr-3'>📷</span><a href='https://unsplash.com/__evanyang__'>Unsplash</a></li>
+          </ul>
+        </div>
+        {/* <div className='mx-auto'>
+          <h2 className="text-xl font-semibold mb-2 text-center">Writings</h2>
+          <ul className='list-inside'>
+            <li><span className='mr-3'>🐦</span><a href='https://twitter.com/__evanyang__'>Newsletter</a></li>
+          </ul>
+        </div> */}
+      </section>
     </main>
   )
 }
