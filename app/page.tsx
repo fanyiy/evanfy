@@ -2,7 +2,7 @@ import Image from 'next/image'
 
 export default function Home() {
   return (
-    <main className="max-w-xl mb-40 px-4 sm:px-6 mt-16 md:mt-20 lg:mt-32 mx-auto space-y-24">
+    <main className="max-w-xl mb-40 px-6 mt-16 md:mt-20 lg:mt-32 mx-auto space-y-24">
       <section className='flex flex-col mx-auto space-y-2'>
         <Image
           src="/avatar.jpg"
