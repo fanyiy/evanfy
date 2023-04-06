@@ -16,7 +16,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={chivo.className}>
-      <body className='bg-neutral-100'>{children}</body>
+      <body className='dark:bg-neutral-900 bg-neutral-100'>{children}</body>
       <Analytics/>
     </html>
   )
