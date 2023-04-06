@@ -1,15 +1,15 @@
 'use client';
 import Image from 'next/image'
-import { motion } from "framer-motion"
+import { motion, Variants } from "framer-motion"
 
-const parent = {
-  visible: {
+const parent: Variants = {
+  onscreen: {
     opacity: 1,
     transition: {
       staggerChildren: 0.2,
     },
   },
-  hidden: {
+  offscreen: {
     opacity: 0,
     transition: {
       when: "afterChildren",
@@ -17,8 +17,8 @@ const parent = {
   },
 }
 
-const children = {
-  visible: {
+const children: Variants = {
+  onscreen: {
     opacity: 1,
     x: 0,
     transition : {
@@ -26,12 +26,19 @@ const children = {
       duration: 0.5,
     }
   },
-  hidden: { opacity: 0, x: 5 },
+  offscreen: {
+    opacity: 0, x: 5
+  },
 }
 
 export default function Home() {
   return (
-    <main className="max-w-xl mb-40 px-6 mt-16 md:mt-20 lg:mt-32 mx-auto space-y-24">
+    <motion.main
+      initial="offscreen"
+      whileInView="onscreen"
+      viewport={{ once: true, amount: 0.8 }}
+      className="max-w-xl mb-40 px-6 mt-16 md:mt-20 lg:mt-32 mx-auto space-y-24"
+    >
       <motion.section
         initial={{ opacity: 0, x: -5 }}
         animate={{ opacity: 1, x: 0 }}
@@ -50,8 +57,9 @@ export default function Home() {
       </motion.section>
       <section className='flex flex-col gap-12 text-sm text-gray-700'>
         <motion.div
-          initial="hidden"
-          animate="visible"
+          initial="offscreen"
+          whileInView="onscreen"
+          viewport={{ once: true, amount: 0.8 }}
           variants={parent}
         >
           <motion.h2
@@ -80,8 +88,9 @@ export default function Home() {
           </motion.div>
         </motion.div>
         <motion.div
-          initial="hidden"
-          animate="visible"
+          initial="offscreen"
+          whileInView="onscreen"
+          viewport={{ once: true, amount: 0.8 }}
           variants={parent}
         >
           <motion.h2
@@ -110,8 +119,9 @@ export default function Home() {
           </motion.div>
         </motion.div>
         <motion.div
-          initial="hidden"
-          animate="visible"
+          initial="offscreen"
+          whileInView="onscreen"
+          viewport={{ once: true, amount: 0.8 }}
           variants={parent}
         >
           <motion.h2
@@ -149,6 +159,6 @@ export default function Home() {
       <section className='flex flex-col mx-auto items-center gap-12 text-sm text-gray-700'>
         <h2 className="text-2xl font-bold mb-2 text-center"><span className='mr-3'>🎉</span>Lastest Updates</h2>
       </section>
-    </main>
+    </motion.main>
   )
 }
