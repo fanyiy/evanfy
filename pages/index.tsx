@@ -198,10 +198,10 @@ export default function Home(props: any) {
                 <a key="{i}" href={ post.link }>
                   <div className="rounded-xl space-y-2 hover:bg-gray-50 duration-200 p-5">
                     <p className={`${post.color} text-xs font-semibold text-white w-fit px-3 py-0.5 rounded-3xl`}>{ post.source }</p>
-                    <h2 className="text-base sm:text-xl font-bold text-gray-700">{ post.title }</h2>
+                    <h2 className="text-lg sm:text-xl font-bold text-gray-700">{ post.title }</h2>
                     <div className="flex flex-col sm:flex-row gap-2 justify-between">
-                      <p className="text-neutral-500 text-xs sm:text-base">{ post.contentSnippet }</p>
-                      <p className="text-gray-500 text-xs sm:mt-auto">{ moment(post.isoDate).fromNow() }</p>
+                      <p className="text-neutral-500 text-sm sm:text-base">{ post.contentSnippet }</p>
+                      <p className="text-gray-500 text-xs sm:text-sm sm:mt-auto">{ moment(post.isoDate).fromNow() }</p>
                     </div>
                   </div>
                 </a>
