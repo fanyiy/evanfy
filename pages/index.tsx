@@ -99,7 +99,7 @@ export default function Home(props: any) {
             <a href='https://gptassistant.app'>
               <div className='flex justify-between items-center space-y-1 p-4 rounded-2xl dark:bg-neutral-800 bg-zinc-100 shadow-sm dark:shadow-neutral-700 hover:shadow-md dark:hover:shadow-neutral-600 hover:-translate-y-1 duration-300'>
                 <div>
-                  <h2 className='text-xl font-bold'>GPTAssistant <span className="ml-3 text-sm font-semibold text-white bg-neutral-400 rounded-3xl px-2 py-0.5">co-founder</span></h2>
+                  <h2 className='text-xl font-bold'>GPTAssistant <span className="ml-3 text-sm font-semibold text-white bg-neutral-400 rounded-3xl px-2 py-0.5">co-found</span></h2>
                   <p className='dark:text-neutral-400 text-gray-600'>a Discord chat bot</p>
                 </div>
                 <div className="text-neutral-500">2023</div>
