@@ -1,6 +1,6 @@
-'use client'
 import { motion, Variants } from "framer-motion"
 import Parser from 'rss-parser';
+import moment from "moment";
 
 
 const parent: Variants = {
@@ -32,10 +32,10 @@ const children: Variants = {
   },
 }
 
-export default function Home() {
+export default function Home(props: any) {
   return (
     <main className="max-w-xl px-6 mt-16 md:mt-20 lg:mt-32 mx-auto space-y-24">
-            <section className='flex flex-col mx-auto space-y-2'>
+      <section className='flex flex-col mx-auto space-y-2'>
         <motion.img
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -171,7 +171,7 @@ export default function Home() {
           </ul>
         </div> */}
       </section>
-      <section className='flex flex-col mx-auto items-center gap-12 dark:text-neutral-300 text-gray-700'>
+      <section className='flex flex-col items-center gap-12 dark:text-neutral-300 text-gray-700'>
         <motion.div
             initial="offscreen"
             whileInView="onscreen"
@@ -182,12 +182,51 @@ export default function Home() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ ease: "easeOut", duration: 0.8 }}
-            className="text-3xl font-bold mb-2"
+            className="text-3xl font-bold mb-8 text-center"
           >
-            <span className='mr-3'>🎉</span>Lastest Updates
+            Lastest Updates
           </motion.h2>
+          <motion.div variants={children} className='p-1'>
+            <div className="mb-64">
+              {props.latest.map((post: any) => (
+                <a href={ post.link }>
+                  <div className="rounded-xl space-y-2 hover:bg-gray-50 duration-200 p-5">
+                    <p className={`${post.color} text-xs font-semibold text-white w-fit px-3 py-0.5 rounded-3xl`}>{ post.source }</p>
+                    <h2 className="text-base sm:text-xl font-bold text-gray-700">{ post.title }</h2>
+                    <div className="flex flex-col sm:flex-row gap-2 justify-between">
+                      <p className="text-neutral-500 text-xs sm:text-base">{ post.contentSnippet }</p>
+                      <p className="text-gray-500 text-xs sm:mt-auto">{ moment(post.isoDate).fromNow() }</p>
+                    </div>
+                  </div>
+                </a>
+              ))}
+            </div>
+          </motion.div>
         </motion.div>
       </section>
     </main>
   )
+}
+
+export async function getStaticProps() {
+  try {
+    const parser = new Parser();
+    const imginsight = await parser.parseURL('https://imginsight.com/blog/feed');
+    return {
+      props: {
+        latest: [
+          ...imginsight.items.map((item) => ({
+            ...item,
+            source: 'ImgInsight Blog',
+            color: 'bg-stone-400',
+          })),
+        ],
+      },
+    }
+  } catch (error) {
+    console.log(error)
+    return {
+      props: [],
+    }
+  }
 }
