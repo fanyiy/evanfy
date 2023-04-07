@@ -60,7 +60,7 @@ export default function Home(props: any) {
           transition={{ ease: "easeOut", duration: 0.5, delay: 0.2 }}
           className="dark:text-neutral-400 text-gray-500"
         >
-          I'm a indie hacker carving out my way to freedom.<br></br>I work on my projects, document my journey on <a href="https://twitter.com/__evanyang__/" className='underline font-semibold'>Twitter</a>, and share my story on my <span className='font-semibold'>newsletter</span>.
+          I'm a indie hacker carving out my way to freedom.<br></br>I work on my projects, document my journey on <a href="https://twitter.com/__evanyang__/" className='underline font-semibold'>Twitter</a>, and share my story on my <span className='font-semibold'>newsletter</span> (comming soon).
         </motion.p>
         {/* <svg className="animate-bounce w-6 h-6 text-white bg-black">
           <path id="XMLID_225_" d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393
