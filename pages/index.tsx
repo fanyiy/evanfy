@@ -99,7 +99,7 @@ export default function Home(props: any) {
             <a href='https://gptassistant.app'>
               <div className='flex justify-between items-center space-y-1 p-4 rounded-2xl dark:bg-neutral-800 bg-zinc-100 shadow-sm dark:shadow-neutral-700 hover:shadow-md dark:hover:shadow-neutral-600 hover:-translate-y-1 duration-300'>
                 <div>
-                  <h2 className='text-xl font-bold'>GPTAssistant <span className="ml-3 text-sm font-semibold text-white bg-neutral-400 rounded-3xl px-2 py-0.5">co-found</span></h2>
+                  <h2 className='text-xl font-bold'>GPTAssistant <span className="ml-3 text-sm font-semibold text-white bg-neutral-400 dark:bg-neutral-600 rounded-3xl px-2 py-0.5">co-found</span></h2>
                   <p className='dark:text-neutral-400 text-gray-600'>a Discord chat bot</p>
                 </div>
                 <div className="text-neutral-500">2023</div>
@@ -196,9 +196,9 @@ export default function Home(props: any) {
             <div className="mb-64">
               {props.latest.map((post: any, i: any) => (
                 <a key="{i}" href={ post.link }>
-                  <div className="rounded-xl space-y-2 hover:bg-gray-50 duration-200 p-5">
+                  <div className="rounded-2xl space-y-2 hover:bg-neutral-50 dark:hover:bg-neutral-800 duration-300 p-5">
                     <p className={`${post.color} text-xs font-semibold text-white w-fit px-3 py-0.5 rounded-3xl`}>{ post.source }</p>
-                    <h2 className="text-lg sm:text-xl font-bold text-gray-700">{ post.title }</h2>
+                    <h2 className="text-lg sm:text-xl font-bold">{ post.title }</h2>
                     <div className="flex flex-col sm:flex-row gap-2 justify-between">
                       <p className="text-neutral-500 text-sm sm:text-base">{ post.contentSnippet }</p>
                       <p className="text-gray-500 text-xs sm:text-sm sm:mt-auto">{ moment(post.isoDate).fromNow() }</p>
