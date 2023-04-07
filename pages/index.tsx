@@ -224,7 +224,7 @@ export async function getStaticProps() {
           ...imginsight.items.map((item) => ({
             ...item,
             source: 'ImgInsight Blog',
-            color: 'bg-stone-400',
+            color: 'bg-stone-400 dark:bg-stone-700',
           })),
         ],
       },
