@@ -86,17 +86,23 @@ export default function Home(props: any) {
           </motion.h2>
           <motion.div variants={children} className='p-1'>
             <a href='https://imginsight.com'>
-              <div className='space-y-1 p-4 rounded-2xl dark:bg-neutral-800 bg-zinc-100 shadow-sm dark:shadow-neutral-700 hover:shadow-md dark:hover:shadow-neutral-600 hover:-translate-y-1 duration-300'>
-                <h2 className='text-xl font-bold'>ImgInsight</h2>
-                <p className='dark:text-neutral-400 text-gray-600'>a photo captioning tool powered by AI</p>
+              <div className='flex justify-between items-center space-y-1 p-4 rounded-2xl dark:bg-neutral-800 bg-zinc-100 shadow-sm dark:shadow-neutral-700 hover:shadow-md dark:hover:shadow-neutral-600 hover:-translate-y-1 duration-300'>
+                <div>
+                  <h2 className='text-xl font-bold'>ImgInsight</h2>
+                  <p className='dark:text-neutral-400 text-gray-600'>a photo captioning tool powered by AI</p>
+                </div>
+                <div className="text-neutral-500">2023</div>
               </div>
             </a>
           </motion.div>
           <motion.div variants={children} className='p-1'>
             <a href='https://gptassistant.app'>
-              <div className='space-y-1 p-4 rounded-2xl dark:bg-neutral-800 bg-zinc-100 shadow-sm dark:shadow-neutral-700 hover:shadow-md dark:hover:shadow-neutral-600 hover:-translate-y-1 duration-300'>
-                <h2 className='text-xl font-bold'>GPTAssistant</h2>
-                <p className='dark:text-neutral-400 text-gray-600'>a Discord chat bot</p>
+              <div className='flex justify-between items-center space-y-1 p-4 rounded-2xl dark:bg-neutral-800 bg-zinc-100 shadow-sm dark:shadow-neutral-700 hover:shadow-md dark:hover:shadow-neutral-600 hover:-translate-y-1 duration-300'>
+                <div>
+                  <h2 className='text-xl font-bold'>GPTAssistant <span className="ml-3 text-sm font-semibold text-white bg-neutral-400 rounded-3xl px-2 py-0.5">co-founder</span></h2>
+                  <p className='dark:text-neutral-400 text-gray-600'>a Discord chat bot</p>
+                </div>
+                <div className="text-neutral-500">2023</div>
               </div>
             </a>
           </motion.div>
@@ -188,8 +194,8 @@ export default function Home(props: any) {
           </motion.h2>
           <motion.div variants={children} className='p-1'>
             <div className="mb-64">
-              {props.latest.map((post: any) => (
-                <a href={ post.link }>
+              {props.latest.map((post: any, i: any) => (
+                <a key="{i}" href={ post.link }>
                   <div className="rounded-xl space-y-2 hover:bg-gray-50 duration-200 p-5">
                     <p className={`${post.color} text-xs font-semibold text-white w-fit px-3 py-0.5 rounded-3xl`}>{ post.source }</p>
                     <h2 className="text-base sm:text-xl font-bold text-gray-700">{ post.title }</h2>
