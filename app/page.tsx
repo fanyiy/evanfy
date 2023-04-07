@@ -50,7 +50,7 @@ export default function Home() {
           transition={{ ease: "easeOut", duration: 0.5 }}
           className="text-2xl font-bold dark:text-neutral-300 text-neutral-700 mb-4"
         >
-          <span className="text-3xl">Hi there!</span><br></br>I'm <span className="text-4xl font-extrabold mx-1">Evan Yang</span> from Taiwan.<br></br>I'm a 20 yo <span className="text-4xl font-extrabold">AI</span> student at <a href='https://vu.nl/en/' className='underline'>VU Amsterdam</a>.
+          Hi there!<br></br>I'm <span className="text-4xl font-extrabold mx-1">Evan Yang</span> from Taiwan.<br></br>I'm a 20 yo AI student at <a href='https://vu.nl/en/' className='underline'>VU Amsterdam</a>.
         </motion.h1>
         <motion.p
           initial={{ opacity: 0, x: -8 }}
