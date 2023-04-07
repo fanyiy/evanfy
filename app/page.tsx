@@ -1,5 +1,7 @@
 'use client'
 import { motion, Variants } from "framer-motion"
+import Parser from 'rss-parser';
+
 
 const parent: Variants = {
   onscreen: {
@@ -33,7 +35,7 @@ const children: Variants = {
 export default function Home() {
   return (
     <main className="max-w-xl px-6 mt-16 md:mt-20 lg:mt-32 mx-auto space-y-24">
-      <section className='flex flex-col mx-auto space-y-2'>
+            <section className='flex flex-col mx-auto space-y-2'>
         <motion.img
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
