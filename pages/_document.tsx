@@ -13,7 +13,7 @@ export default function Document() {
   return (
     <Html lang="en" className='dark:bg-neutral-900 bg-neutral-100'>
       <Head>
-      <meta name="robots" content="follow, index" />
+        <meta name="robots" content="follow, index" />
         <meta name="description" content={meta.description} />
         <meta property="og:site_name" content={meta.title} />
         <meta property="og:description" content={meta.description} />
