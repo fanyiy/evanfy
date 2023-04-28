@@ -169,7 +169,68 @@ export default function Home(props: any) {
             </a>
           </motion.div>
         </motion.div>
-
+        <motion.div
+          initial="offscreen"
+          whileInView="onscreen"
+          viewport={{ once: true, amount: 0.8 }}
+          variants={parent}
+        >
+          <motion.h2
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ ease: "easeOut", duration: 0.5 }}
+            className="text-3xl font-bold mb-2"
+          >
+          Photography
+          </motion.h2>
+          <motion.div variants={children} className='p-1'>
+            <a href='https://unsplash.com/__evanyang__/'>
+              <div className='space-y-1 p-4 rounded-2xl dark:bg-neutral-800 bg-zinc-100 shadow-sm dark:shadow-neutral-700 hover:shadow-md dark:hover:shadow-neutral-600 hover:-translate-y-1 duration-300'>
+                <h2 className='text-xl font-bold'>Unsplash</h2>
+                <p className='dark:text-neutral-400 text-gray-600'>open source my photography work xD</p>
+              </div>
+            </a>
+          </motion.div>
+          <motion.div variants={children} className='p-1'>
+            <a href='https://instagram.com/__evanyang__/'>
+              <div className='space-y-1 p-4 rounded-2xl dark:bg-neutral-800 bg-zinc-100 shadow-sm dark:shadow-neutral-700 hover:shadow-md dark:hover:shadow-neutral-600 hover:-translate-y-1 duration-300'>
+                <h2 className='text-xl font-bold'>Instagram</h2>
+                <p className='dark:text-neutral-400 text-gray-600'>infrequent updates</p>
+              </div>
+            </a>
+          </motion.div>
+        </motion.div>
+        <motion.div
+          initial="offscreen"
+          whileInView="onscreen"
+          viewport={{ once: true, amount: 0.8 }}
+          variants={parent}
+        >
+          <motion.h2
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ ease: "easeOut", duration: 0.5 }}
+            className="text-3xl font-bold mb-2"
+          >
+          Other
+          </motion.h2>
+          <motion.div variants={children} className='p-1'>
+            <a href='https://www.producthunt.com/@__evanyang__'>
+              <div className='space-y-1 p-4 rounded-2xl dark:bg-neutral-800 bg-zinc-100 shadow-sm dark:shadow-neutral-700 hover:shadow-md dark:hover:shadow-neutral-600 hover:-translate-y-1 duration-300'>
+                <h2 className='text-xl font-bold'>Product Hunt</h2>
+                <p className='dark:text-neutral-400 text-gray-600'>the home 🏡 of my products</p>
+              </div>
+            </a>
+          </motion.div>
+          <motion.div variants={children} className='p-1'>
+            <a href='https://www.indiehackers.com/evanyang'>
+              <div className='space-y-1 p-4 rounded-2xl dark:bg-neutral-800 bg-zinc-100 shadow-sm dark:shadow-neutral-700 hover:shadow-md dark:hover:shadow-neutral-600 hover:-translate-y-1 duration-300'>
+                <h2 className='text-xl font-bold'>Indie Hackers</h2>
+                <p className='dark:text-neutral-400 text-gray-600'>just a link :)</p>
+              </div>
+            </a>
+          </motion.div>
+        </motion.div>
         {/* <div className=''>
           <h2 className="text-xl font-semibold mb-2">Writings</h2>
           <ul className='list-inside'>
