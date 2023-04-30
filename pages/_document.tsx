@@ -3,8 +3,8 @@ import { Html, Head, Main, NextScript } from 'next/document'
 
 export default function Document() {
   const meta = {
-    title: "Evan's Portfolio",
-    description: "Evan's Portfolio",
+    title: "Evan Yang",
+    description: "Evan Yang's personal website.",
     image: '👋',
     robots: 'follow, index',
     twitter: '@__evanyang__',

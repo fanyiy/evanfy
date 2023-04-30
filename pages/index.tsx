@@ -1,6 +1,7 @@
 import { motion, Variants } from "framer-motion"
 import Parser from 'rss-parser';
 import moment from "moment";
+import Image from "next/image";
 
 
 const parent: Variants = {
@@ -36,16 +37,14 @@ export default function Home(props: any) {
   return (
     <main className="max-w-xl px-6 mt-16 md:mt-20 lg:mt-32 mx-auto space-y-24">
       <section className='flex flex-col mx-auto space-y-2'>
-        <motion.img
-          initial={{ opacity: 0, scale: 0.9 }}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ ease: "easeOut", duration: 0.5 }}
-          src="/avatar.jpg"
-          alt="Evan Yang"
-          width={100}
-          height={100}
-          className="rounded-full mb-3"
-        />
+          transition={{ ease: "easeOut", duration: 1 }}
+        >
+          <Image src="/avatar.jpg" alt="Evan Yang" width={100} height={100} className="rounded-full mb-3" />
+        </motion.div>
+
         <motion.h1
           initial={{ opacity: 0, x: -8 }}
           animate={{ opacity: 1, x: 0 }}
@@ -62,12 +61,6 @@ export default function Home(props: any) {
         >
           I'm a indie hacker carving out my way to freedom.<br></br>I work on my projects, document my journey on <a href="https://twitter.com/__evanyang__/" className='underline font-semibold'>Twitter</a>, and share my story on my <span className='font-semibold'>newsletter</span> (comming soon).
         </motion.p>
-        {/* <svg className="animate-bounce w-6 h-6 text-white bg-black">
-          <path id="XMLID_225_" d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393
-            c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393
-            s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"
-          />
-        </svg> */}
       </section>
       <section className='flex flex-col gap-16 text-sm dark:text-neutral-300 text-gray-700'>
         <motion.div
@@ -103,37 +96,6 @@ export default function Home(props: any) {
                   <p className='dark:text-neutral-400 text-gray-600'>a Discord chat bot</p>
                 </div>
                 <div className="text-neutral-500">2023</div>
-              </div>
-            </a>
-          </motion.div>
-        </motion.div>
-        <motion.div
-          initial="offscreen"
-          whileInView="onscreen"
-          viewport={{ once: true, amount: 0.8 }}
-          variants={parent}
-        >
-          <motion.h2
-            initial={{ opacity: 0, y: 8 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ ease: "easeOut", duration: 0.5 }}
-            className="text-3xl font-bold mb-2"
-          >
-          Photography
-          </motion.h2>
-          <motion.div variants={children} className='p-1'>
-            <a href='https://unsplash.com/__evanyang__/'>
-              <div className='space-y-1 p-4 rounded-2xl dark:bg-neutral-800 bg-zinc-100 shadow-sm dark:shadow-neutral-700 hover:shadow-md dark:hover:shadow-neutral-600 hover:-translate-y-1 duration-300'>
-                <h2 className='text-xl font-bold'>Unsplash</h2>
-                <p className='dark:text-neutral-400 text-gray-600'>open source my photography work xD</p>
-              </div>
-            </a>
-          </motion.div>
-          <motion.div variants={children} className='p-1'>
-            <a href='https://instagram.com/__evanyang__/'>
-              <div className='space-y-1 p-4 rounded-2xl dark:bg-neutral-800 bg-zinc-100 shadow-sm dark:shadow-neutral-700 hover:shadow-md dark:hover:shadow-neutral-600 hover:-translate-y-1 duration-300'>
-                <h2 className='text-xl font-bold'>Instagram</h2>
-                <p className='dark:text-neutral-400 text-gray-600'>infrequent updates</p>
               </div>
             </a>
           </motion.div>
@@ -257,11 +219,11 @@ export default function Home(props: any) {
             <div className="mb-64">
               {props.latest.map((post: any, i: any) => (
                 <a key="{i}" href={ post.link }>
-                  <div className="rounded-2xl space-y-2 hover:bg-neutral-50 dark:hover:bg-neutral-800 duration-300 p-5">
+                  <div className='space-y-1 p-4 rounded-2xl dark:bg-neutral-800 bg-zinc-100 shadow-sm dark:shadow-neutral-700 hover:shadow-md dark:hover:shadow-neutral-600 hover:-translate-y-1 duration-300'>
                     <p className={`${post.color} text-xs font-semibold text-white w-fit px-3 py-0.5 rounded-3xl`}>{ post.source }</p>
-                    <h2 className="text-lg sm:text-xl font-bold">{ post.title }</h2>
+                    <h2 className="text-xl font-bold">{ post.title }</h2>
                     <div className="flex flex-col sm:flex-row gap-2 justify-between">
-                      <p className="text-neutral-500 text-sm sm:text-base">{ post.contentSnippet }</p>
+                      <p className="dark:text-neutral-400 text-gray-500">{ post.contentSnippet }</p>
                       <p className="text-gray-500 text-xs sm:text-sm sm:mt-auto">{ moment(post.isoDate).fromNow() }</p>
                     </div>
                   </div>
