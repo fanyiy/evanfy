@@ -174,6 +174,29 @@ export default function Home(props: any) {
             transition={{ ease: "easeOut", duration: 0.5 }}
             className="text-3xl font-bold mb-2"
           >
+          Writing
+          </motion.h2>
+          <motion.div variants={children} className='p-1'>
+            <a href='https://evanyangdev.substack.com/'>
+              <div className='space-y-1 p-4 rounded-2xl dark:bg-neutral-800 bg-zinc-100 shadow-sm dark:shadow-neutral-700 hover:shadow-md dark:hover:shadow-neutral-600 hover:-translate-y-1 duration-300'>
+                <h2 className='text-xl font-bold'>Newsletter</h2>
+                <p className='dark:text-neutral-400 text-gray-600'>coming soon...</p>
+              </div>
+            </a>
+          </motion.div>
+        </motion.div>
+        <motion.div
+          initial="offscreen"
+          whileInView="onscreen"
+          viewport={{ once: true, amount: 0.8 }}
+          variants={parent}
+        >
+          <motion.h2
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ ease: "easeOut", duration: 0.5 }}
+            className="text-3xl font-bold mb-2"
+          >
           Other
           </motion.h2>
           <motion.div variants={children} className='p-1'>
@@ -193,12 +216,7 @@ export default function Home(props: any) {
             </a>
           </motion.div>
         </motion.div>
-        {/* <div className=''>
-          <h2 className="text-xl font-semibold mb-2">Writings</h2>
-          <ul className='list-inside'>
-            <li><span className='mr-3'>🐦</span><a href='https://twitter.com/__evanyang__'>Newsletter</a></li>
-          </ul>
-        </div> */}
+
       </section>
       <section className='flex flex-col items-center gap-12 dark:text-neutral-300 text-gray-700'>
         <motion.div
