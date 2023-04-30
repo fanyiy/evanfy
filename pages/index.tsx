@@ -40,7 +40,7 @@ export default function Home(props: any) {
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ ease: "easeOut", duration: 1 }}
+          transition={{ ease: "easeOut", duration: 0.5 }}
         >
           <Image src="/avatar.jpg" alt="Evan Yang" width={100} height={100} className="rounded-full mb-3" />
         </motion.div>
