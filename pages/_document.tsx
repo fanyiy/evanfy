@@ -1,17 +1,16 @@
-import { Html, Head, Main, NextScript } from 'next/document'
-
+import { Html, Head, Main, NextScript } from "next/document";
 
 export default function Document() {
   const meta = {
     title: "Evan Yang",
     description: "Evan Yang's personal website.",
-    image: '👋',
-    robots: 'follow, index',
-    twitter: '@__evanyang__',
-  }
+    image: "👋",
+    robots: "follow, index",
+    twitter: "@__evanyang__",
+  };
 
   return (
-    <Html lang="en" className='dark:bg-neutral-900 bg-neutral-100'>
+    <Html lang="en" className="dark:bg-neutral-900 bg-neutral-100">
       <Head>
         <meta name="robots" content="follow, index" />
         <meta name="description" content={meta.description} />
@@ -30,5 +29,5 @@ export default function Document() {
         <NextScript />
       </body>
     </Html>
-  )
+  );
 }
