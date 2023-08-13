@@ -3,13 +3,19 @@ import { Html, Head, Main, NextScript } from "next/document";
 export default function Document() {
   const meta = {
     title: "Evan Yang",
-    description: "Evan Yang's personal website.",
-    keywords: ["personal website", "portfolio", "Evan Yang", "web development", "projects", "creative work"],
+    description:
+      "I'm an indie hacker carving out my way to freedom. I work on my projects, document my journey on Twitter, and write about my learnings on my newsletter.",
+    keywords: [
+      "personal website",
+      "portfolio",
+      "Evan Yang",
+      "web development",
+      "projects",
+      "creative work",
+    ],
     image: "👋",
-    robots: "follow, index",
     twitter: "@__evanyang__",
   };
-
 
   return (
     <Html lang="en" className="dark:bg-neutral-900 bg-neutral-100">
