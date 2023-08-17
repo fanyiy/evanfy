@@ -120,15 +120,15 @@ export default function Home({ sections, latest }: any) {
                 <a href={item.link}>
                   <div className="flex items-center justify-between gap-1 p-4 rounded-2xl dark:bg-neutral-800 bg-zinc-100 shadow-sm dark:shadow-neutral-700 hover:shadow-md dark:hover:shadow-neutral-600 hover:-translate-y-1 duration-300">
                     <div className="flex flex-col gap-1">
-                      <h2 className="text-xl font-bold flex">
+                      <h2 className="text-xl font-semibold flex">
                         {item.name}
                         {item.status === "in progress" && (
-                          <span className="m-auto ml-3 text-sm font-semibold text-white bg-neutral-400 dark:bg-neutral-600 rounded-3xl px-2 py-0.5">
+                          <span className="m-auto ml-3 text-sm font-medium text-white bg-neutral-400 dark:bg-neutral-600 rounded-3xl px-2 py-0.5">
                             coming soon
                           </span>
                         )}
                       </h2>
-                      <p className="dark:text-neutral-400 text-gray-600">
+                      <p className="dark:text-neutral-400 text-gray-500">
                         {item.description}
                       </p>
                     </div>
@@ -168,7 +168,7 @@ export default function Home({ sections, latest }: any) {
                     >
                       {post.source}
                     </p>
-                    <h2 className="text-xl font-bold">{post.title}</h2>
+                    <h2 className="text-xl font-semibold">{post.title}</h2>
                     <div className="flex flex-col sm:flex-row gap-2 justify-between">
                       <p className="dark:text-neutral-400 text-gray-500">
                         {post.contentSnippet}
