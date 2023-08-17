@@ -55,7 +55,7 @@ interface Homeprops {
 
 export default function Home({ sections, latest }: any) {
   return (
-    <div className="mt-12 mx-auto space-y-20">
+    <div className="mx-auto space-y-20">
       <section className="flex flex-col mx-auto space-y-2">
         <motion.div
           initial={{ opacity: 0 }}

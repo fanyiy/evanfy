@@ -19,14 +19,10 @@ const navItems = [
 export default function NavBar() {
   let pathname = usePathname() || "/";
 
-  if (pathname.includes("/writing/")) {
-    pathname = "/writing";
-  }
-
   const [hoveredPath, setHoveredPath] = useState(pathname);
 
   return (
-    <div className="w-[130px] flex-shrink-0 rounded-lg bg-gray-200 dark:bg-neutral-800">
+    <div className="w-[130px] flex-shrink-0 rounded-lg bg-gray-200 dark:bg-neutral-800 mb-16">
       <nav className="flex gap-0 relative justify-around z-[100] rounded-lg py-1.5">
         {navItems.map((item) => {
           const isActive = item.path === pathname;
@@ -36,8 +32,8 @@ export default function NavBar() {
               key={item.path}
               className={`px-2.5 py-1.5 rounded-md text-sm lg:text-md font-medium relative no-underline duration-300 ease-in ${
                 isActive
-                  ? "text-gray-800 dark:text-neutral-200"
-                  : "text-gray-500 dark:text-neutral-400"
+                  ? "text-gray-800 dark:text-neutral-100"
+                  : "text-gray-500 dark:text-neutral-300"
               }`}
               data-active={isActive}
               href={item.path}

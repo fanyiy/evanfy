@@ -1,5 +1,4 @@
 import Home from "../components/home";
-import Navbar from "@/components/sidebar";
 import Parser from "rss-parser";
 
 const projects = [

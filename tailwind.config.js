@@ -1,12 +1,28 @@
-/** @type {import('tailwindcss').Config} */
-module.exports = {
+import typography from "@tailwindcss/typography";
+
+export default {
   content: [
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./app/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./content/**/*.mdx",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ["var(--font-graphik)"],
+      },
+      typography: {
+        quoteless: {
+          css: {
+            "blockquote p:first-of-type::before": { content: "none" },
+            "blockquote p:first-of-type::after": { content: "none" },
+          },
+        },
+      },
+    },
   },
-  plugins: [],
+  future: {
+    hoverOnlyWhenSupported: true,
+  },
+  plugins: [typography],
 };
