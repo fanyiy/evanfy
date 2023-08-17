@@ -55,7 +55,7 @@ interface Homeprops {
 
 export default function Home({ sections, latest }: any) {
   return (
-    <main className="max-w-xl px-6 mt-16 md:mt-20 lg:mt-32 mx-auto space-y-24">
+    <main className="max-w-xl px-6 mt-16 md:mt-20 lg:mt-32 mx-auto space-y-20">
       <section className="flex flex-col mx-auto space-y-2">
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
@@ -76,18 +76,7 @@ export default function Home({ sections, latest }: any) {
           transition={{ ease: "easeOut", duration: 0.5 }}
           className="text-2xl font-bold dark:text-neutral-300 text-neutral-700 mb-4"
         >
-          Hi there!
-          <br />
-          I'm <span className="text-4xl font-extrabold mx-1">
-            Evan Yang
-          </span>{" "}
-          from Taiwan.
-          <br />
-          I'm a 20 yo AI student at{" "}
-          <a href="https://vu.nl/en/" className="underline">
-            VU Amsterdam
-          </a>
-          .
+          Hey I'm Evan
         </motion.h1>
         <motion.p
           initial={{ opacity: 0, x: -8 }}
@@ -95,16 +84,18 @@ export default function Home({ sections, latest }: any) {
           transition={{ ease: "easeOut", duration: 0.5, delay: 0.2 }}
           className="dark:text-neutral-400 text-gray-500"
         >
-          I'm an indie hacker carving out my way to freedom.
-          <br />I work on my projects, document my journey on
+          I'm a 20 yo AI student at{" "}
+          <a href="https://vu.nl/en/" className="underline">
+            VU Amsterdam
+          </a>
+          . You'll find me crafting projects, documenting my journey on{" "}
           <a
             href="https://twitter.com/__evanyang__/"
-            className="underline font-semibold"
+            className="underline"
           >
             Twitter
           </a>
-          , and share my story on my{" "}
-          <span className="font-semibold">newsletter</span> (coming soon).
+          , and soon, sharing my story and thoughts through my blog.
         </motion.p>
       </section>
       <section className="flex flex-col gap-16 text-sm dark:text-neutral-300 text-gray-700">
@@ -120,33 +111,31 @@ export default function Home({ sections, latest }: any) {
               initial={{ opacity: 0, y: 8 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ ease: "easeOut", duration: 0.5 }}
-              className="text-3xl font-bold mb-2"
+              className="text-2xl font-bold mb-2"
             >
               {section.title}
             </motion.h2>
             {section.items?.map((item: any, i: number) => (
               <motion.div key={i} variants={children} className="p-1">
-                <a href={item.link} className="flex flex-col">
-                  <div className="space-y-1 p-4 rounded-2xl dark:bg-neutral-800 bg-zinc-100 shadow-sm dark:shadow-neutral-700 hover:shadow-md dark:hover:shadow-neutral-600 hover:-translate-y-1 duration-300">
-                    <div className="flex items-center justify-between">
-                      <div className="flex flex-col gap-1">
-                        <h2 className="text-xl font-bold flex">
-                          {item.name}
-                          {item.status === "in progress" && (
-                            <span className="m-auto ml-3 text-sm font-semibold text-white bg-neutral-400 dark:bg-neutral-600 rounded-3xl px-2 py-0.5">
-                              coming soon
-                            </span>
-                          )}
-                        </h2>
-                        <p className="dark:text-neutral-400 text-gray-600">
-                          {item.description}
-                        </p>
-                      </div>
-
-                      {item.year && (
-                        <div className="text-neutral-500">{item.year}</div>
-                      )}
+                <a href={item.link}>
+                  <div className="flex items-center justify-between gap-1 p-4 rounded-2xl dark:bg-neutral-800 bg-zinc-100 shadow-sm dark:shadow-neutral-700 hover:shadow-md dark:hover:shadow-neutral-600 hover:-translate-y-1 duration-300">
+                    <div className="flex flex-col gap-1">
+                      <h2 className="text-xl font-bold flex">
+                        {item.name}
+                        {item.status === "in progress" && (
+                          <span className="m-auto ml-3 text-sm font-semibold text-white bg-neutral-400 dark:bg-neutral-600 rounded-3xl px-2 py-0.5">
+                            coming soon
+                          </span>
+                        )}
+                      </h2>
+                      <p className="dark:text-neutral-400 text-gray-600">
+                        {item.description}
+                      </p>
                     </div>
+
+                    {item.year && (
+                      <div className="text-neutral-500">{item.year}</div>
+                    )}
                   </div>
                 </a>
               </motion.div>
@@ -172,7 +161,7 @@ export default function Home({ sections, latest }: any) {
           <motion.div variants={children} className="p-1">
             <div className="mb-56">
               {latest?.map((post: any, i: any) => (
-                <a key="{i}" href={post.link}>
+                <a key={i} href={post.link}>
                   <div className="space-y-1 p-4 rounded-2xl dark:bg-neutral-800 bg-zinc-100 shadow-sm dark:shadow-neutral-700 hover:shadow-md dark:hover:shadow-neutral-600 hover:-translate-y-1 duration-300">
                     <p
                       className={`${post.color} text-xs font-semibold text-white w-fit px-3 py-0.5 rounded-3xl`}
