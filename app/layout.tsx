@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     siteName: "Evan Yang",
     images: [
       {
-        url: "https://evanyang.dev/og",
+        url: "https://evanyang.dev/og.jpg",
       },
     ],
     type: "website",
