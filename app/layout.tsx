@@ -9,7 +9,7 @@ const chivo = Chivo({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Evan Yang",
   description:
-    "I'm an indie hacker carving out my way to freedom. I work on my projects, document my journey on Twitter, and write about my learnings on my newsletter.",
+    "I'm an indie hacker carving out my way to freedom. I work on my projects, document my journey on Twitter, and write about my learnings on my blog.",
   keywords: [
     "Evan Yang",
     "personal website",
@@ -18,6 +18,29 @@ export const metadata: Metadata = {
     "indie hacker",
     "solopreneur",
   ],
+  openGraph: {
+    title: "Evan Yang",
+    description:
+      "I'm an indie hacker carving out my way to freedom. I work on my projects, document my journey on Twitter, and write about my learnings on my blog.",
+    url: "https://evanyang.dev",
+    siteName: "Evan Yang",
+    type: "website",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  twitter: {
+    title: "Evan Yang",
+    card: "summary_large_image",
+  },
 };
 
 export default function RootLayout({
