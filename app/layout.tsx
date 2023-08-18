@@ -8,7 +8,10 @@ const chivo = Chivo({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://evanyang.dev'),
-  title: "Evan Yang",
+  title: {
+    default: 'Evan Yang',
+    template: '%s | Evan Yang',
+  },
   description:
     "I'm an indie hacker carving out my way to freedom. I work on my projects, document my journey on Twitter, and write about my learnings on my blog.",
   keywords: [
@@ -42,7 +45,6 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Evan Yang",
     creator: "@__evanyang__",
-
   },
 };
 
