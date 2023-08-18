@@ -24,6 +24,11 @@ export const metadata: Metadata = {
       "I'm an indie hacker carving out my way to freedom. I work on my projects, document my journey on Twitter, and write about my learnings on my blog.",
     url: "https://evanyang.dev",
     siteName: "Evan Yang",
+    images: [
+      {
+        url: "https://evanyang.dev/og",
+      },
+    ],
     type: "website",
   },
   robots: {
