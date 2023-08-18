@@ -24,11 +24,6 @@ export const metadata: Metadata = {
       "I'm an indie hacker carving out my way to freedom. I work on my projects, document my journey on Twitter, and write about my learnings on my blog.",
     url: "https://evanyang.dev",
     siteName: "Evan Yang",
-    images: [
-      {
-        url: "https://evanyang.dev/og.jpg",
-      },
-    ],
     type: "website",
   },
   robots: {
@@ -43,8 +38,11 @@ export const metadata: Metadata = {
     },
   },
   twitter: {
-    title: "Evan Yang",
     card: "summary_large_image",
+    title: "Evan Yang",
+    images: ["https://evanyang.dev/og.jpg"],
+    creator: "@__evanyang__",
+
   },
 };
 
