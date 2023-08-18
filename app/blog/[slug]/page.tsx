@@ -4,6 +4,7 @@ import { Mdx } from "components/mdx";
 import { allBlogs } from "contentlayer/generated";
 import { getTweets } from "lib/twitter";
 import Balancer from "react-wrap-balancer";
+import PostTitle from "components/post-title";
 
 export async function generateMetadata({
   params,
@@ -84,7 +85,7 @@ export default async function Blog({ params }) {
     notFound();
   }
 
-//   const [tweets] = await Promise.all([getTweets(post.tweetIds)]);
+  //   const [tweets] = await Promise.all([getTweets(post.tweetIds)]);
 
   return (
     <section>
@@ -96,7 +97,7 @@ export default async function Blog({ params }) {
         }}
       ></script>
       <h1 className="font-bold text-2xl tracking-tighter max-w-[650px]">
-        <Balancer>{post.title}</Balancer>
+        <PostTitle title={post.title} />
       </h1>
       <div className="flex justify-between items-center mt-2 mb-8 text-sm max-w-[650px]">
         <p className="text-sm text-neutral-600 dark:text-neutral-400">
