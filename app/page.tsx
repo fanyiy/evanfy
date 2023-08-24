@@ -3,6 +3,12 @@ import Parser from "rss-parser";
 
 const projects = [
   {
+    name: "Bliss & Wisdom Alumni",
+    description: "A global map of my high school alumni",
+    link: "https://blisswisdomalumni.com",
+    year: "2023",
+  },
+  {
     name: "SpeakFlowAI",
     description: "AI IElTS speaking assistant",
     status: "in progress",
