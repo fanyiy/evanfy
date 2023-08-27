@@ -38,7 +38,7 @@ const projects = [
 
 const socialLinks = [
   {
-    name: "Twitter",
+    name: "X (formerly Twitter)",
     link: "https://twitter.com/__evanyang__/",
     description: "keep up with my journey",
   },

@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     template: '%s | Evan Yang',
   },
   description:
-    "I'm an indie hacker carving out my way to freedom. I work on my projects, document my journey on Twitter, and write about my learnings on my blog.",
+    "I'm an indie hacker carving out my way to freedom. I work on my projects, document my journey on X (formerly Twitter), and write about my learnings on my blog.",
   keywords: [
     "Evan Yang",
     "personal website",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Evan Yang",
     description:
-      "I'm an indie hacker carving out my way to freedom. I work on my projects, document my journey on Twitter, and write about my learnings on my blog.",
+      "I'm an indie hacker carving out my way to freedom. I work on my projects, document my journey on X (formerly Twitter), and write about my learnings on my blog.",
     url: "https://evanyang.dev",
     siteName: "Evan Yang",
     type: "website",

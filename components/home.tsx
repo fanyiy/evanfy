@@ -91,7 +91,7 @@ export default function Home({ sections, latest }: any) {
           </a>
           . You'll find me crafting projects, documenting my journey on{" "}
           <a href="https://twitter.com/__evanyang__/" className="underline">
-            Twitter
+            X (formerly Twitter)
           </a>
           , and soon, sharing my story and thoughts through my blog.
         </motion.p>
