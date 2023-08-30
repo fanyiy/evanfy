@@ -3,17 +3,33 @@ import { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/react";
 import { Chivo } from "next/font/google";
 import Navbar from "components/navbar";
+import { Poppins, Roboto, Noto_Sans } from "next/font/google";
 
-const chivo = Chivo({ subsets: ["latin"] });
+// const inter = Inter({
+//   subsets: ["latin"],
+//   weight: ["100", "200", "300", "400", "500", "600", "700", "800"],
+// });
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800"],
+});
+
+const noto_sans = Noto_Sans({
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800"],
+});
+
+// const chivo = Chivo({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://evanyang.dev'),
+  metadataBase: new URL("https://evanyang.dev"),
   title: {
-    default: 'Evan Yang',
-    template: '%s | Evan Yang',
+    default: "Evan Yang",
+    template: "%s | Evan Yang",
   },
   description:
-    "I'm an indie hacker carving out my way to freedom. I work on my projects, document my journey on X (formerly Twitter), and write about my learnings on my blog.",
+    "Evan Yang | I'm an indie hacker carving out my way to freedom. I work on my projects, document my journey on X (formerly Twitter), and write about my learnings on my blog.",
   keywords: [
     "Evan Yang",
     "personal website",
@@ -25,7 +41,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Evan Yang",
     description:
-      "I'm an indie hacker carving out my way to freedom. I work on my projects, document my journey on X (formerly Twitter), and write about my learnings on my blog.",
+      "Evan Yang | I'm an indie hacker carving out my way to freedom. I work on my projects, document my journey on X (formerly Twitter), and write about my learnings on my blog.",
     url: "https://evanyang.dev",
     siteName: "Evan Yang",
     type: "website",
@@ -56,7 +72,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${chivo.className} antialiased max-w-2xl mb-40 flex flex-col md:flex-row mx-4 mt-8 lg:mx-auto dark:bg-neutral-900 dark:text-white bg-neutral-50`}
+        className={`${noto_sans.className} max-w-2xl mb-40 flex flex-col md:flex-row mx-4 mt-8 lg:mx-auto dark:bg-neutral-900 dark:text-white bg-neutral-50`}
         suppressHydrationWarning={true}
       >
         <main className="flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0">
