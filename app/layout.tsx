@@ -1,9 +1,9 @@
 import "./globals.css";
 import { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/react";
-import { Chivo } from "next/font/google";
 import Navbar from "components/navbar";
 import { Poppins, Roboto, Noto_Sans } from "next/font/google";
+import { Providers } from "components/providers";
 
 // const inter = Inter({
 //   subsets: ["latin"],
@@ -77,7 +77,9 @@ export default function RootLayout({
       >
         <main className="flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0">
           <Navbar />
-          {children}
+          <Providers attribute="class" defaultTheme="system" enableSystem>
+            {children}
+          </Providers>
         </main>
         <Analytics />
       </body>

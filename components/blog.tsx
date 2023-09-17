@@ -10,7 +10,7 @@ export default function Blog({ allBlogs }) {
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="text-2xl font-bold dark:text-neutral-300 text-neutral-700 mb-8"
+        className="text-2xl font-bold mb-8"
       >
         Blog
       </motion.h1>
@@ -24,7 +24,7 @@ export default function Blog({ allBlogs }) {
         .map((post) => (
           <div className="flex flex-col mb-5" key={post.slug}>
             <Link
-              className="text-gray-200"
+              className="text-neutral-900 dark:text-neutral-100"
               href={`/blog/${post.slug}`}
             >
               <motion.div
@@ -40,7 +40,7 @@ export default function Blog({ allBlogs }) {
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              <div className="text-sm text-gray-400">
+              <div className="text-sm text-neutral-500 dark:text-neutral-500">
                 {new Date(post.publishedAt).toLocaleString("en-us", {
                   month: "long",
                   day: "numeric",
