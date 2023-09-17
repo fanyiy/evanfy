@@ -89,7 +89,8 @@ export default function Home({ sections, latest }: any) {
           <a href="https://vu.nl/en/" className="underline">
             VU Amsterdam
           </a>
-          . You'll find me crafting projects, documenting my journey on{" "}
+          , originally from Taiwan. You'll find me crafting projects,
+          documenting my journey on{" "}
           <a href="https://twitter.com/__evanyang__/" className="underline">
             X (formerly Twitter)
           </a>
