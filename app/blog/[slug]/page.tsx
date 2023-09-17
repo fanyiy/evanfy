@@ -96,7 +96,7 @@ export default async function Blog({ params }) {
           __html: JSON.stringify(post.structuredData),
         }}
       ></script>
-      <h1 className="font-bold text-2xl tracking-tighter max-w-[650px]">
+      <h1 className="font-bold text-2xl max-w-[650px]">
         <PostTitle title={post.title} />
       </h1>
       <div className="flex justify-between items-center mt-2 mb-8 text-sm max-w-[650px]">
@@ -104,7 +104,6 @@ export default async function Blog({ params }) {
           {formatDate(post.publishedAt)}
         </p>
       </div>
-      {/* <Mdx code={post.body.code} tweets={tweets} /> */}
       <Mdx code={post.body.code} />
     </section>
   );

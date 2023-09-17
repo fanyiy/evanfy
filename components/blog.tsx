@@ -22,19 +22,33 @@ export default function Blog({ allBlogs }) {
           return 1;
         })
         .map((post) => (
-          <Link
-            key={post.slug}
-            className="flex flex-col space-y-1 mb-4 text-gray-200"
-            href={`/blog/${post.slug}`}
-          >
+          <div className="flex flex-col mb-5" key={post.slug}>
+            <Link
+              className="text-gray-200"
+              href={`/blog/${post.slug}`}
+            >
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+              >
+                <Balancer>{post.title}</Balancer>
+              </motion.div>
+            </Link>
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              <Balancer>{post.title}</Balancer>
+              <div className="text-sm text-gray-400">
+                {new Date(post.publishedAt).toLocaleString("en-us", {
+                  month: "long",
+                  day: "numeric",
+                  year: "numeric",
+                })}
+              </div>
             </motion.div>
-          </Link>
+          </div>
         ))}
     </section>
   );
