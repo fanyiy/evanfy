@@ -96,7 +96,7 @@ export default async function Blog({ params }) {
           __html: JSON.stringify(post.structuredData),
         }}
       ></script>
-      <h1 className="font-bold text-3xl">
+      <h1 className="font-bold text-2xl sm:text-3xl">
         <PostTitle title={post.title} />
       </h1>
       <div className="flex justify-between items-center mt-2 mb-8 text-sm max-w-[650px]">
