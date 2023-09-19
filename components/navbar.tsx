@@ -17,8 +17,10 @@ const navItems = [
 ];
 
 export default function NavBar() {
-  let pathname = usePathname() || "/";
-
+  let pathname = usePathname() || '/';
+  if (pathname.includes('/blog/')) {
+    pathname = '/blog';
+  }
   const [hoveredPath, setHoveredPath] = useState(pathname);
 
   return (
