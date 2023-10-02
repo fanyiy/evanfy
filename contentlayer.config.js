@@ -47,14 +47,15 @@ export const Blog = defineDocumentType(() => ({
       type: "string",
       required: true,
     },
-    publishedAt: {
-      type: "string",
-      required: true,
-    },
     summary: {
       type: "string",
       required: true,
     },
+    publishedAt: {
+      type: "string",
+      required: true,
+    },
+    status: { type: "enum", options: ["draft", "published"], required: true },
     image: {
       type: "string",
     },

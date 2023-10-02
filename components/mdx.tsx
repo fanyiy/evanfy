@@ -101,7 +101,7 @@ const components = {
     const Component = useMDXComponent(code);
 
   return (
-    <article className="max-w-full prose prose-quoteless prose-neutral dark:prose-invert">
+    <article className="max-w-full prose prose-quoteless prose-neutral dark:prose-invert antialiased">
       <Component components={{ ...components }} />
     </article>
   );

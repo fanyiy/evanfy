@@ -8,5 +8,7 @@ export const metadata: Metadata = {
 };
 
 export default function BlogPage() {
-  return <Blog allBlogs={allBlogs} />;
+  // keep posts with status "published"
+  const posts = allBlogs.filter((post) => post.status === "published");
+  return <Blog allBlogs={posts} />;
 }
