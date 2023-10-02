@@ -45,7 +45,7 @@ const socialLinks = [
   {
     name: "Linkedin",
     link: "https://linkedin.com/in/evanyang-dev/",
-    description: "barely use it :)",
+    description: "trying to be there...",
   },
 ];
 
@@ -66,7 +66,7 @@ const writing = [
   {
     name: "Newsletter",
     link: "https://evanyang.substack.com/",
-    description: "coming soon...",
+    description: "subscribe to get latest updates",
   },
 ];
 
