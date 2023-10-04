@@ -3,6 +3,12 @@ import Parser from "rss-parser";
 
 const projects = [
   {
+    name: "Creator Mind",
+    description: "Chatbots for blog/newsletter",
+    link: "https://creatormind.co",
+    year: "2023",
+  },
+  {
     name: "Bliss & Wisdom Alumni",
     description: "A global map of my high school alumni",
     link: "https://blisswisdomalumni.com",
