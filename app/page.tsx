@@ -3,7 +3,7 @@ import Parser from "rss-parser";
 
 const projects = [
   {
-    name: "Creator Mind",
+    name: "CreatorMind",
     description: "Chatbots for blog/newsletter",
     link: "https://creatormind.co",
     year: "2023",
