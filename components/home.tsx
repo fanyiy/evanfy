@@ -142,7 +142,7 @@ export default function Home({ sections, latest }: any) {
           </motion.div>
         ))}
       </section>
-      <section className="flex flex-col items-center gap-12 dark:text-neutral-300 text-gray-700">
+      {/* <section className="flex flex-col items-center gap-12 dark:text-neutral-300 text-gray-700">
         <motion.div
           initial="offscreen"
           whileInView="onscreen"
@@ -182,7 +182,7 @@ export default function Home({ sections, latest }: any) {
             </div>
           </motion.div>
         </motion.div>
-      </section>
+      </section> */}
     </div>
   );
 }
