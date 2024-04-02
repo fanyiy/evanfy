@@ -45,12 +45,12 @@ const projects = [
 const socialLinks = [
   {
     name: "X (formerly Twitter)",
-    link: "https://twitter.com/__evanyang__/",
+    link: "https://twitter.com/TheEvanYang",
     description: "keep up with my journey",
   },
   {
     name: "Linkedin",
-    link: "https://linkedin.com/in/evanyang-dev/",
+    link: "https://linkedin.com/in/evanfy",
     description: "trying to be there...",
   },
 ];
