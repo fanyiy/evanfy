@@ -22,8 +22,8 @@ export async function generateMetadata({
     slug,
   } = post;
   const ogImage = image
-    ? `https://evanyang.dev${image}`
-    : `https://evanyang.dev/og?title=${title}`;
+    ? `https://evanfy.com${image}`
+    : `https://evanfy.com/og?title=${title}`;
 
   return {
     title,
@@ -33,7 +33,7 @@ export async function generateMetadata({
       description,
       type: "article",
       publishedTime,
-      url: `https://evanyang.dev/blog/${slug}`,
+      url: `https://evanfy.com/blog/${slug}`,
       images: [
         {
           url: ogImage,

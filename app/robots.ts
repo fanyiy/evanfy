@@ -5,7 +5,7 @@ export default function robots() {
           userAgent: '*',
         },
       ],
-      sitemap: 'https://evanyang.dev/sitemap.xml',
-      host: 'https://evanyang.dev',
+      sitemap: 'https://evanfy.com/sitemap.xml',
+      host: 'https://evanfy.com',
     };
   }

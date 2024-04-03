@@ -23,7 +23,7 @@ const noto_sans = Noto_Sans({
 // const chivo = Chivo({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://evanyang.dev"),
+  metadataBase: new URL("https://evanfy.com"),
   title: {
     default: "Evan Yang",
     template: "%s | Evan Yang",
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     title: "Evan Yang",
     description:
       "Evan Yang | I'm an indie hacker carving out my way to freedom. I work on my projects, document my journey on X (formerly Twitter), and write about my learnings on my blog.",
-    url: "https://evanyang.dev",
+    url: "https://evanfy.com",
     siteName: "Evan Yang",
     type: "website",
   },
