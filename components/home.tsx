@@ -1,6 +1,5 @@
 "use client";
 import { motion, Variants } from "framer-motion";
-import moment from "moment";
 import Image from "next/image";
 
 const parent: Variants = {
@@ -85,16 +84,8 @@ export default function Home({ sections, latest }: any) {
           transition={{ ease: "easeOut", duration: 0.5, delay: 0.2 }}
           className="dark:text-neutral-400 text-gray-500"
         >
-          I'm a 20 yo AI student at{" "}
-          <a href="https://vu.nl/en/" className="underline">
-            VU Amsterdam
-          </a>
-          , originally from Taiwan. You'll find me crafting projects,
-          documenting my journey on{" "}
-          <a href="https://twitter.com/__evanyang__/" className="underline">
-            X (formerly Twitter)
-          </a>
-          , and soon, sharing my story and thoughts through my blog.
+          I quit college and am now bootstrapping startups. You can find me building projects and sharing my startup journey
+          on <a href="https://twitter.com/TheEvanYang/" className="underline">X</a>.
         </motion.p>
       </section>
       <section className="flex flex-col gap-16 text-sm dark:text-neutral-300 text-gray-700">

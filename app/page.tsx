@@ -14,11 +14,11 @@ const projects = [
     link: "https://blisswisdomalumni.com",
     year: "2023",
   },
-  {
-    name: "SpeakFlowAI",
-    description: "AI IElTS speaking assistant",
-    status: "in progress",
-  },
+  // {
+  //   name: "SpeakFlowAI",
+  //   description: "AI IElTS speaking assistant",
+  //   status: "in progress",
+  // },
   {
     name: "Feedbase",
     description: "customer feedback widget on your website",
@@ -44,7 +44,7 @@ const projects = [
 
 const socialLinks = [
   {
-    name: "X (formerly Twitter)",
+    name: "X",
     link: "https://twitter.com/TheEvanYang",
     description: "keep up with my journey",
   },
@@ -93,8 +93,8 @@ const sections = [
   { title: "Projects", items: projects },
   { title: "Get in touch", items: socialLinks },
   { title: "Photography", items: photography },
-  { title: "Writing", items: writing },
-  { title: "Other", items: other },
+  // { title: "Writing", items: writing },
+  // { title: "Other", items: other },
 ];
 
 export default async function HomePage() {
