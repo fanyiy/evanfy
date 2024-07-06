@@ -1,7 +1,12 @@
 import Home from "../components/home";
-import Parser from "rss-parser";
 
 const projects = [
+  {
+    name: "IdeaWIP",
+    description: "Find business ideas that solve real problems",
+    link: "https://ideawip.com",
+    year: "2024",
+  },
   {
     name: "CreatorMind",
     description: "Chatbots for blog/newsletter",
@@ -98,14 +103,5 @@ const sections = [
 ];
 
 export default async function HomePage() {
-  const parser = new Parser();
-  const imginsight = await parser.parseURL("https://imginsight.com/blog/feed");
-  const latest = [
-    ...imginsight.items.map((item) => ({
-      ...item,
-      source: "ImgInsight Blog",
-      color: "bg-stone-400 dark:bg-stone-700",
-    })),
-  ];
-  return <Home sections={sections} latest={latest} />;
+  return <Home sections={sections} />;
 }
