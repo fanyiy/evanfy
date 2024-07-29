@@ -2,6 +2,10 @@ import Home from "../components/home";
 
 const projects = [
   {
+    name: "AffiliList",
+    description: "The #1 directory of affiliate programs",
+  },
+  {
     name: "IdeaWIP",
     description: "Find business ideas that solve real problems",
     link: "https://ideawip.com",
