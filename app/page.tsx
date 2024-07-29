@@ -4,6 +4,8 @@ const projects = [
   {
     name: "AffiliList",
     description: "The #1 directory of affiliate programs",
+    link: "https://affililist.com",
+    year: "2024",
   },
   {
     name: "IdeaWIP",
