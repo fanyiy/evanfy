@@ -68,7 +68,7 @@ const socialLinks = [
   {
     name: "Threads",
     link: "https://www.threads.net/@evanyang_yfy",
-    description: "i like it her!e",
+    description: "i like it here!",
   },
   {
     name: "Linkedin",
