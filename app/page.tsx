@@ -2,26 +2,31 @@ import Home from "../components/home";
 
 const projects = [
   {
+    name: "IllustraAI",
+    description: "create beautiful Notion style illustrations with AI",
+    link: "https://illustraai.com",
+  },
+  {
     name: "AffiliList",
-    description: "The #1 directory of affiliate programs",
+    description: "the #1 directory of affiliate programs",
     link: "https://affililist.com",
     year: "2024",
   },
   {
     name: "IdeaWIP",
-    description: "Find business ideas that solve real problems",
+    description: "find business ideas that solve real problems",
     link: "https://ideawip.com",
     year: "2024",
   },
   {
     name: "CreatorMind",
-    description: "Chatbots for blog/newsletter",
+    description: "chatbots for blog/newsletter",
     link: "https://creatormind.co",
     year: "2023",
   },
   {
     name: "Bliss & Wisdom Alumni",
-    description: "A global map of my high school alumni",
+    description: "a global map of my high school alumni",
     link: "https://blisswisdomalumni.com",
     year: "2023",
   },
@@ -58,6 +63,11 @@ const socialLinks = [
     name: "X",
     link: "https://twitter.com/TheEvanYang",
     description: "keep up with my journey",
+  },
+  {
+    name: "Threads",
+    link: "https://www.threads.net/@evanyang_yfy",
+    description: "i like it her!e",
   },
   {
     name: "Linkedin",
