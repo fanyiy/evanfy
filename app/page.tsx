@@ -5,6 +5,7 @@ const projects = [
     name: "IllustraAI",
     description: "create beautiful Notion style illustrations with AI",
     link: "https://illustraai.com",
+    year: "2024",
   },
   {
     name: "AffiliList",
