@@ -84,7 +84,7 @@ export default function RootLayout({
         </main>
         <Analytics />
         <Script
-          async
+          defer
           src="https://umami.evanfy.com/script.js"
           data-website-id="8b984886-545d-43d6-b9a5-03f9a1f070b2"
         />
