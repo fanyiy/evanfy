@@ -2,18 +2,19 @@ import "./globals.css";
 import { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/react";
 import Navbar from "components/navbar";
-import { Poppins, Roboto, Noto_Sans } from "next/font/google";
+import { Noto_Sans } from "next/font/google";
 import { Providers } from "components/providers";
+import Script from "next/script";
 
 // const inter = Inter({
 //   subsets: ["latin"],
 //   weight: ["100", "200", "300", "400", "500", "600", "700", "800"],
 // });
 
-const poppins = Poppins({
-  subsets: ["latin"],
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800"],
-});
+// const poppins = Poppins({
+//   subsets: ["latin"],
+//   weight: ["100", "200", "300", "400", "500", "600", "700", "800"],
+// });
 
 const noto_sans = Noto_Sans({
   subsets: ["latin"],
@@ -60,7 +61,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Evan Yang",
-    creator: "@__evanyang__",
+    creator: "@TheEvanYang",
   },
 };
 
@@ -82,6 +83,11 @@ export default function RootLayout({
           </Providers>
         </main>
         <Analytics />
+        <Script
+          async
+          src="https://umami.evanfy.com/script.js"
+          data-website-id="8b984886-545d-43d6-b9a5-03f9a1f070b2"
+        />
       </body>
     </html>
   );
