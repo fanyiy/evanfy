@@ -23,6 +23,9 @@ const noto_sans = Noto_Sans({
 
 // const chivo = Chivo({ subsets: ["latin"] });
 
+export const runtime = 'edge';
+
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://evanfy.com"),
   title: {

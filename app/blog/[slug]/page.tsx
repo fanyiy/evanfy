@@ -5,9 +5,6 @@ import { allBlogs } from "contentlayer/generated";
 import { getTweets } from "lib/twitter";
 import PostTitle from "components/post-title";
 import { ArrowUpRight } from "lucide-react";
-
-export const runtime = 'edge';
-
 export async function generateMetadata({
   params,
 }): Promise<Metadata | undefined> {
