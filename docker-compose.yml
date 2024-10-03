@@ -4,6 +4,7 @@ services:
       context: .
       dockerfile: Dockerfile
       target: runner
+    container_name: evanfy
     restart: always
     ports:
       - "3000:3000"
@@ -19,6 +20,7 @@ services:
 
   nginx:
     image: nginx:alpine
+    container_name: evanfy-nginx
     ports:
       - "80:80"
     volumes:
