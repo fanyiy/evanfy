@@ -2,9 +2,11 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Mdx } from "components/mdx";
 import { allBlogs } from "contentlayer/generated";
-import { getTweets } from "lib/twitter";
 import PostTitle from "components/post-title";
 import { ArrowUpRight } from "lucide-react";
+import Script from 'next/script';
+
+
 export async function generateMetadata({
   params,
 }): Promise<Metadata | undefined> {
@@ -84,17 +86,14 @@ export default async function Blog({ params }) {
     notFound();
   }
 
-  //   const [tweets] = await Promise.all([getTweets(post.tweetIds)]);
-
   return (
     <section>
-      <script
+      <Script
+        id="structured-data"
         type="application/ld+json"
-        suppressHydrationWarning
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(post.structuredData),
-        }}
-      ></script>
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(post.structuredData) }}
+        strategy="beforeInteractive"
+      />
       <h1 className="font-bold text-2xl sm:text-3xl">
         <PostTitle title={post.title} />
       </h1>
@@ -108,19 +107,12 @@ export default async function Blog({ params }) {
         <a
           href="https://twitter.com/TheEvanYang"
           target="_blank"
+          rel="noopener noreferrer"
           className="flex items-center hover:text-neutral-800 dark:hover:text-neutral-100 transition-all"
         >
           <ArrowUpRight className="w-5 h-5 mr-2" />
           Follow me
         </a>
-        {/* <a
-          href="https://evanyang.substack.com/"
-          target="_blank"
-          className="flex items-center hover:text-neutral-800 dark:hover:text-neutral-100 transition-all"
-        >
-          <ArrowUpRight className="w-5 h-5 mr-2" />
-          Get email updates
-        </a> */}
       </ul>
     </section>
   );
