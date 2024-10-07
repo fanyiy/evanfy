@@ -20,7 +20,7 @@ jobs:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.SSH_PASSWORD }}
           script: |
-            cd /opt/apps/evanfy
+            cd /var/www/apps/evanfy
             git pull origin main
             docker-compose -f docker-compose.yml build --no-cache
             docker-compose -f docker-compose.yml up -d --force-recreate
