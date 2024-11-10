@@ -88,6 +88,11 @@ export default function RootLayout({
           src="https://umami.evanfy.com/script.js"
           data-website-id="8b984886-545d-43d6-b9a5-03f9a1f070b2"
         />
+        <Script
+          defer
+          data-domain="evanfy.com"
+          src="https://plausible.evanfy.com/js/script.js"
+        />
       </body>
     </html>
   );
