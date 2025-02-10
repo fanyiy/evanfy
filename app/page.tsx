@@ -101,8 +101,8 @@ export default async function HomePage() {
             Hey I'm Evan
           </h1>
           <p className="text-sm sm:text-base">
-            I quit college and am now bootstrapping startups. You can find me building projects and sharing my startup journey
-            on <a href="https://twitter.com/TheEvanYang/" className="underline">X</a>.
+            I quit college to be a solo founder building with AI.
+            Currently nomading while working on my projects.
           </p>
           <div className="flex gap-2">
             {socialLinks.map((social, i) => (
@@ -187,13 +187,12 @@ export default async function HomePage() {
               From idea to launch in weeks, not months
             </p>
           </div>
-
           <div className="grid sm:grid-cols-2 gap-4">
             <div className="flex items-center gap-3 p-3 rounded-lg bg-background/50 border border-border">
               <Bot className="size-6" />
               <div>
                 <p className="font-medium">AI Integration</p>
-                <p className="text-sm text-muted-foreground">LLMs, Vector DB, APIs</p>
+                <p className="text-sm text-muted-foreground">LLMs, Image Gen, etc.</p>
               </div>
             </div>
             <div className="flex items-center gap-3 p-3 rounded-lg bg-background/50 border border-border">
