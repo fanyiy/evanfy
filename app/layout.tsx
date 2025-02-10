@@ -1,27 +1,15 @@
 import "./globals.css";
 import { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/react";
-import Navbar from "components/navbar";
+// import Navbar from "components/navbar";
 import { Noto_Sans } from "next/font/google";
-import { Providers } from "components/providers";
 import Script from "next/script";
-
-// const inter = Inter({
-//   subsets: ["latin"],
-//   weight: ["100", "200", "300", "400", "500", "600", "700", "800"],
-// });
-
-// const poppins = Poppins({
-//   subsets: ["latin"],
-//   weight: ["100", "200", "300", "400", "500", "600", "700", "800"],
-// });
+import { ThemeProvider } from "components/theme-provider";
 
 const noto_sans = Noto_Sans({
   subsets: ["latin"],
   weight: ["100", "200", "300", "400", "500", "600", "700", "800"],
 });
-
-// const chivo = Chivo({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://evanfy.com"),
@@ -30,7 +18,7 @@ export const metadata: Metadata = {
     template: "%s | Evan Yang",
   },
   description:
-    "Evan Yang | I'm an indie hacker carving out my way to freedom. I work on my projects, document my journey on X (formerly Twitter), and write about my learnings on my blog.",
+    "Evan Yang | I'm an solopreneur building startups while traveling the world.",
   keywords: [
     "Evan Yang",
     "personal website",
@@ -38,11 +26,12 @@ export const metadata: Metadata = {
     "web development",
     "indie hacker",
     "solopreneur",
+    "digital nomad",
   ],
   openGraph: {
     title: "Evan Yang",
     description:
-      "Evan Yang | I'm an indie hacker carving out my way to freedom. I work on my projects, document my journey on X (formerly Twitter), and write about my learnings on my blog.",
+      "Evan Yang | I'm an solopreneur building startups while traveling the world.",
     url: "https://evanfy.com",
     siteName: "Evan Yang",
     type: "website",
@@ -71,23 +60,22 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
-        className={`${noto_sans.className} max-w-2xl py-24 flex flex-col md:flex-row mx-4 lg:mx-auto dark:bg-neutral-900 dark:text-white bg-neutral-50`}
-        suppressHydrationWarning={true}
+        className={`${noto_sans.className} max-w-xl px-6 sm:px-0 py-12 sm:py-24 mx-auto`}
       >
-        <main className="flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0">
-          {/* <Navbar /> */}
-          <Providers attribute="class" defaultTheme="system" enableSystem>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem={false}
+          forcedTheme="dark"
+        >
+          <main className="min-h-screen">
+            {/* <Navbar /> */}
             {children}
-          </Providers>
-        </main>
+          </main>
+        </ThemeProvider>
         <Analytics />
-        <Script
-          defer
-          src="https://umami.evanfy.com/script.js"
-          data-website-id="8b984886-545d-43d6-b9a5-03f9a1f070b2"
-        />
         <Script
           defer
           data-domain="evanfy.com"
