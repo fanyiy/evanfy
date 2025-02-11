@@ -19,7 +19,7 @@ export default function BookingForm() {
       data-cal-config='{"layout":"month_view"}'
       className="px-4 py-2 rounded-lg border border-border font-medium flex items-center gap-2 group"
     >
-      <span>Book a call</span>
+      Let's chat!
       <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
     </button>
   )

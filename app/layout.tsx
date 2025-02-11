@@ -1,10 +1,9 @@
 import "./globals.css";
 import { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/react";
-// import Navbar from "components/navbar";
 import { Noto_Sans } from "next/font/google";
 import Script from "next/script";
-import { ThemeProvider } from "components/theme-provider";
+import { ThemeProvider } from "@/components/theme-provider";
 
 const noto_sans = Noto_Sans({
   subsets: ["latin"],
@@ -62,7 +61,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${noto_sans.className} max-w-xl px-6 sm:px-0 py-12 sm:py-24 mx-auto`}
+        className={`${noto_sans.className}`}
       >
         <ThemeProvider
           attribute="class"
@@ -71,7 +70,6 @@ export default function RootLayout({
           forcedTheme="dark"
         >
           <main className="min-h-screen">
-            {/* <Navbar /> */}
             {children}
           </main>
         </ThemeProvider>

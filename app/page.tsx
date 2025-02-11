@@ -1,6 +1,7 @@
-import BookingForm from "components/booking-form";
-import { Bot, Brain, Code, Target, Zap, Palette } from "lucide-react";
+import BookingForm from "@/components/booking-form";
+import { Bot, Code, Zap, Palette } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 const projects = [
   {
@@ -82,9 +83,12 @@ const socialLinks = [
   },
 ];
 
-export default async function HomePage() {
+export default function HomePage() {
   return (
-    <div className="flex flex-col gap-12 sm:gap-20">
+    <div className="max-w-xl mx-auto flex flex-col gap-12 px-6 sm:px-0 py-12 sm:py-24">
+      <Link href="/">
+        <Image src="/images/signature-2.png" alt="Evan" width={80} height={80} className="dark:invert" />
+      </Link>
       <div className="flex flex-col sm:flex-row sm:items-center gap-6">
         <div className="w-32 sm:w-44 flex-shrink-0">
           <Image
@@ -121,7 +125,7 @@ export default async function HomePage() {
         </div>
       </div>
 
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-4 mt-12">
         <div className="flex items-center justify-between">
           <h2 className="text-xl sm:text-2xl font-bold mb-2">
             Projects
