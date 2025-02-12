@@ -1,5 +1,5 @@
 import BookingForm from "@/components/booking-form";
-import { Bot, Code, Zap, Palette } from "lucide-react";
+import { Bot, Code, Zap, Palette, ArrowRightIcon, MoveRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -155,7 +155,7 @@ export default function HomePage() {
                       ></div>
                     </div>
                   </h2>
-                  <p className="text-sm">
+                  <p className="text-sm text-muted-foreground">
                     {item.description}
                   </p>
                 </div>
@@ -180,6 +180,16 @@ export default function HomePage() {
           ))}
         </div>
       </div>
+
+      <Link href="/tools" className="group flex items-center justify-between p-6 sm:p-8 border border-border rounded-xl sm:rounded-2xl hover:border-foreground/20 transition-colors">
+        <div className="flex flex-col gap-2">
+          <h2 className="text-xl sm:text-2xl font-bold">Tools</h2>
+          <p className="text-sm text-muted-foreground">
+            A few tools I built to help you with your idea
+          </p>
+        </div>
+        <MoveRight className="size-6 transform transition-transform duration-300 group-hover:translate-x-1" />
+      </Link>
 
       <div className="flex flex-col gap-6 p-6 sm:p-8 rounded-xl sm:rounded-2xl border border-border">
         <div className="flex flex-col gap-4">

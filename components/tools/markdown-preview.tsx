@@ -73,7 +73,7 @@ export function MarkdownPreview({ className }: MarkdownPreviewProps) {
       }}
       className={cn(
         "relative flex rounded-xl border border-border overflow-hidden",
-        isFullscreen ? "fixed inset-0 z-50 bg-background" : "h-[calc(100vh-26rem)]",
+        isFullscreen ? "fixed inset-0 z-50 bg-background" : "h-[calc(100vh-20rem)]",
         className
       )}
     >
