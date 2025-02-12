@@ -185,7 +185,7 @@ export default function HomePage() {
         <div className="flex flex-col gap-2">
           <h2 className="text-xl sm:text-2xl font-bold">Tools</h2>
           <p className="text-sm text-muted-foreground">
-            A few tools I built to help you with your idea
+            A collection of free tools I built
           </p>
         </div>
         <MoveRight className="size-6 transform transition-transform duration-300 group-hover:translate-x-1" />

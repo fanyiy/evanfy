@@ -23,7 +23,7 @@ export default function ToolsPage() {
       <div className="flex flex-col gap-2">
         <h1 className="text-2xl font-bold">Tools</h1>
         <p className="text-sm text-muted-foreground">
-          Tools to help you with your idea
+          A collection of free tools I built
         </p>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
