@@ -4,10 +4,11 @@ import { useState } from "react"
 import { Input } from "@/components/ui/input"
 import { Card } from "@/components/ui/card"
 import { z } from "zod"
-import { ArrowUpRight, Loader } from "lucide-react"
+import { ArrowUpRight, EyeOff, Loader } from "lucide-react"
 import { generateDomains } from "@/actions/generate-domains"
 import { checkDomains } from "@/actions/check-domain-availability"
 import { Skeleton } from "@/components/ui/skeleton"
+import { Switch } from "@/components/ui/switch"
 
 const domainSchema = z.object({
   suggestions: z.array(z.object({
@@ -28,6 +29,7 @@ export function DomainGenerator() {
   const [isChecking, setIsChecking] = useState(false)
   const [isLoadingMore, setIsLoadingMore] = useState(false)
   const [hasMoreDomains, setHasMoreDomains] = useState(true)
+  const [hideUnavailable, setHideUnavailable] = useState(false)
 
   async function fetchDomains(count: number, append = false) {
     const loadingState = append ? setIsLoadingMore : setIsChecking
@@ -77,6 +79,10 @@ export function DomainGenerator() {
     await fetchDomains(10, true)
   }
 
+  const filteredDomains = hideUnavailable 
+    ? domains.filter(domain => domain.available) 
+    : domains
+
   return (
     <div className="w-full space-y-4">
       <form onSubmit={handleSubmit} className="flex gap-2">
@@ -101,18 +107,27 @@ export function DomainGenerator() {
 
       {domains.length > 0 && (
         <>
-          <div className="flex items-center gap-4 text-sm text-muted-foreground">
-            <div className="flex items-center gap-2">
-              <span className="h-2 w-2 rounded-full bg-green-600" />
-              Available
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-4 text-sm text-muted-foreground">
+              <div className="flex items-center gap-2">
+                <span className="h-2 w-2 rounded-full bg-green-600" />
+                Available
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="h-2 w-2 rounded-full bg-red-600" />
+                Unavailable
+              </div>
             </div>
-            <div className="flex items-center gap-2">
-              <span className="h-2 w-2 rounded-full bg-red-600" />
-              Unavailable
+            <div className="flex items-center gap-2 text-sm text-muted-foreground">
+              <Switch
+                checked={hideUnavailable}
+                onCheckedChange={setHideUnavailable}
+              />
+              <span>Hide Unavailable</span>
             </div>
           </div>
           <div className="grid gap-4 md:grid-cols-2">
-            {domains.map((domain, i) => (
+            {filteredDomains.map((domain, i) => (
               <Card key={`${domain.name}-${i}`} className="p-4">
                 <h3 className="text-lg font-semibold flex items-center ">
                   {domain.name}
