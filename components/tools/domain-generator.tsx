@@ -30,21 +30,44 @@ export function DomainGenerator() {
   const [isLoadingMore, setIsLoadingMore] = useState(false)
   const [hasMoreDomains, setHasMoreDomains] = useState(true)
   const [hideUnavailable, setHideUnavailable] = useState(false)
+  const [attemptCount, setAttemptCount] = useState(0)
 
   async function fetchDomains(count: number, append = false) {
     const loadingState = append ? setIsLoadingMore : setIsChecking
     loadingState(true)
     try {
-      const result = await generateDomains(query, count)
+      // Request more domains than needed to account for potential duplicates
+      const result = await generateDomains(query, count + (append ? 5 : 0))
       const parsed = domainSchema.parse(result)
       const updatedDomains = await checkDomainAvailability(parsed.suggestions)
-
-      // If we get fewer domains than requested, there are no more to generate
-      if (updatedDomains.length < count) {
-        setHasMoreDomains(false)
+      
+      if (append) {
+        // Filter out duplicates when appending
+        const existingNames = new Set(domains.map(d => d.name.toLowerCase()))
+        const uniqueNewDomains = updatedDomains.filter(d => !existingNames.has(d.name.toLowerCase()))
+        
+        if (uniqueNewDomains.length === 0) {
+          // If all results were duplicates and we haven't tried too many times
+          if (attemptCount < 2) {
+            setAttemptCount(prev => prev + 1)
+            await fetchDomains(count, append)
+            return
+          }
+          // If we've tried multiple times and still get duplicates, assume no more unique domains
+          setHasMoreDomains(false)
+        } else {
+          setDomains(prev => [...prev, ...uniqueNewDomains.slice(0, count)])
+          setAttemptCount(0)
+        }
+      } else {
+        setDomains(updatedDomains)
+        setAttemptCount(0)
       }
 
-      setDomains(prev => append ? [...prev, ...updatedDomains] : updatedDomains)
+      // Check if we should hide the "Generate More" button
+      if (updatedDomains.length < count || attemptCount >= 2) {
+        setHasMoreDomains(false)
+      }
     } catch (error) {
       console.error("Failed to fetch domains:", error)
       setHasMoreDomains(false)
@@ -71,6 +94,7 @@ export function DomainGenerator() {
     if (!query.trim()) return
     if (domains.length > 0) setDomains([])
     setHasMoreDomains(true)
+    setAttemptCount(0)
     fetchDomains(10)
   }
 
