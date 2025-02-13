@@ -26,18 +26,28 @@ export function DomainGenerator() {
   const [query, setQuery] = useState("")
   const [domains, setDomains] = useState<DomainSuggestion[]>([])
   const [isChecking, setIsChecking] = useState(false)
+  const [isLoadingMore, setIsLoadingMore] = useState(false)
+  const [hasMoreDomains, setHasMoreDomains] = useState(true)
 
-  async function fetchDomains() {
-    setIsChecking(true)
+  async function fetchDomains(count: number, append = false) {
+    const loadingState = append ? setIsLoadingMore : setIsChecking
+    loadingState(true)
     try {
-      const result = await generateDomains(query, 10)
+      const result = await generateDomains(query, count)
       const parsed = domainSchema.parse(result)
       const updatedDomains = await checkDomainAvailability(parsed.suggestions)
-      setDomains(updatedDomains)
+
+      // If we get fewer domains than requested, there are no more to generate
+      if (updatedDomains.length < count) {
+        setHasMoreDomains(false)
+      }
+
+      setDomains(prev => append ? [...prev, ...updatedDomains] : updatedDomains)
     } catch (error) {
       console.error("Failed to fetch domains:", error)
+      setHasMoreDomains(false)
     } finally {
-      setIsChecking(false)
+      loadingState(false)
     }
   }
 
@@ -58,7 +68,13 @@ export function DomainGenerator() {
     e.preventDefault()
     if (!query.trim()) return
     if (domains.length > 0) setDomains([])
-    fetchDomains()
+    setHasMoreDomains(true)
+    fetchDomains(10)
+  }
+
+  async function handleLoadMore() {
+    if (isLoadingMore || isChecking) return
+    await fetchDomains(10, true)
   }
 
   return (
@@ -97,7 +113,7 @@ export function DomainGenerator() {
           </div>
           <div className="grid gap-4 md:grid-cols-2">
             {domains.map((domain, i) => (
-              <Card key={i} className="p-4">
+              <Card key={`${domain.name}-${i}`} className="p-4">
                 <h3 className="text-lg font-semibold flex items-center ">
                   {domain.name}
                   <span className={`ml-2 h-2 w-2 rounded-full ${domain.available ? "bg-green-600" : "bg-red-600"}`} />
@@ -117,10 +133,21 @@ export function DomainGenerator() {
               </Card>
             ))}
           </div>
+          {hasMoreDomains && !isLoadingMore && (
+            <div className="flex justify-center">
+              <button
+                onClick={handleLoadMore}
+                disabled={isLoadingMore || isChecking}
+                className="px-6 py-2 text-sm rounded-xl border border-border font-medium flex items-center justify-center hover:bg-primary/10 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                Generate More
+              </button>
+            </div>
+          )}
         </>
       )}
 
-      {isChecking && (
+      {(isChecking || isLoadingMore) && (
         <div className="grid gap-4 md:grid-cols-2">
           {[...Array(10)].map((_, i) => (
             <Card key={i} className="p-4">
