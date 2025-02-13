@@ -17,8 +17,7 @@ export default function DomainGeneratorPage() {
       <div className="flex flex-col gap-2">
         <h1 className="text-xl sm:text-2xl font-bold">Domain Name Generator</h1>
         <p className="text-sm sm:text-base text-muted-foreground">
-          Enter a description of your idea, and I&apos;ll generate creative domain name suggestions
-          and check their availability.
+          Enter a description and get domain name ideas
         </p>
       </div>
       <DomainGenerator />
