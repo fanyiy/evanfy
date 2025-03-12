@@ -5,11 +5,11 @@ import Link from "next/link";
 
 const projects = [
   {
-    name: "IllustraAI",
-    description: "Create vector illustrations in seconds",
-    link: "https://illustraai.com",
+    name: "illustration.app",
+    description: "Create custom vector illustrations in seconds",
+    link: "https://illustration.app",
     year: "2024",
-    image: "images/illustraai.png",
+    image: "images/illustration.app.png",
     status: "active",
   },
   {
