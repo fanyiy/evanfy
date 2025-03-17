@@ -9,7 +9,7 @@ const projects = [
     description: "Create custom vector illustrations in seconds",
     link: "https://illustration.app",
     year: "2024",
-    image: "images/illustration.app.png",
+    image: "images/illustrationapp.png",
     status: "active",
   },
   {
