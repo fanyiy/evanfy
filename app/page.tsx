@@ -1,9 +1,25 @@
 import BookingForm from "@/components/booking-form";
-import { Bot, Code, Zap, Palette, ArrowRightIcon, MoveRight } from "lucide-react";
+import { Bot, Code, Zap, Palette, MoveRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
 const projects = [
+  {
+    name: "Routstr",
+    description: "A Decentralised LLM Routing Marketplace",
+    link: "https://routstr.com",
+    year: "2025",
+    image: "images/routstr.png",
+    status: "active",
+  },
+  {
+    name: "Chibify.app",
+    description: "Turn any photo into a cute chibi-style version",
+    link: "https://chibify.app",
+    year: "2025",
+    status: "active",
+  },
+
   {
     name: "illustration.app",
     description: "Create custom vector illustrations in seconds",
@@ -102,11 +118,11 @@ export default function HomePage() {
         </div>
         <div className="flex flex-col space-y-4">
           <h1 className="text-xl sm:text-2xl font-bold">
-            Hey I'm Evan
+            Hey I'm Evan :P
           </h1>
           <p className="text-sm sm:text-base">
-            I quit college to be a solo founder building with AI.
-            Currently nomading while working on my projects.
+            College dropout building with AI.
+            Currently nomading while working on projects.
           </p>
           <div className="flex gap-2">
             {socialLinks.map((social, i) => (
