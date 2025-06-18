@@ -45,7 +45,6 @@ const projects = [
   {
     name: "CreatorMind",
     description: "Chatbots for blogs and newsletters",
-    link: "https://creatormind.co",
     year: "2023",
     status: "paused",
   },
@@ -158,42 +157,54 @@ export default function HomePage() {
           </div>
         </div>
         <div className="flex flex-col gap-3 sm:gap-4">
-          {projects?.map((item, i) => (
-            <a href={item.link} key={i} target="_blank" rel="noopener noreferrer" className="flex flex-col p-4 sm:p-5 rounded-xl sm:rounded-2xl shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 border border-border">
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between w-full">
-                <div className="flex flex-col gap-1">
-                  <h2 className="text-lg sm:text-xl font-semibold flex items-center">
-                    <div className="flex items-center gap-2">
-                      {item.name}
-                      <div
-                        className={`w-2 h-2 rounded-full ${item.status === "active" ? "bg-green-500" : "bg-yellow-500"
-                          }`}
-                      ></div>
-                    </div>
-                  </h2>
-                  <p className="text-sm text-muted-foreground">
-                    {item.description}
-                  </p>
+          {projects?.map((item, i) => {
+            const content = (
+              <div className="flex flex-col p-4 sm:p-5 rounded-xl sm:rounded-2xl shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 border border-border">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between w-full">
+                  <div className="flex flex-col gap-1">
+                    <h2 className="text-lg sm:text-xl font-semibold flex items-center">
+                      <div className="flex items-center gap-2">
+                        {item.name}
+                        <div
+                          className={`w-2 h-2 rounded-full ${item.status === "active" ? "bg-green-500" : "bg-yellow-500"
+                            }`}
+                        ></div>
+                      </div>
+                    </h2>
+                    <p className="text-sm text-muted-foreground">
+                      {item.description}
+                    </p>
+                  </div>
+
+                  {'year' in item && (
+                    <div className="text-sm sm:text-base mt-2 sm:mt-0">{item.year}</div>
+                  )}
                 </div>
 
-                {'year' in item && (
-                  <div className="text-sm sm:text-base mt-2 sm:mt-0">{item.year}</div>
+                {item.image && (
+                  <div className="w-full mt-4">
+                    <Image
+                      src={`/${item.image}`}
+                      alt={`${item.name} preview`}
+                      width={800}
+                      height={400}
+                      className="rounded-lg w-full"
+                    />
+                  </div>
                 )}
               </div>
+            );
 
-              {item.image && (
-                <div className="w-full mt-4">
-                  <Image
-                    src={`/${item.image}`}
-                    alt={`${item.name} preview`}
-                    width={800}
-                    height={400}
-                    className="rounded-lg w-full"
-                  />
-                </div>
-              )}
-            </a>
-          ))}
+            return item.link ? (
+              <a href={item.link} key={i} target="_blank" rel="noopener noreferrer">
+                {content}
+              </a>
+            ) : (
+              <div key={i}>
+                {content}
+              </div>
+            );
+          })}
         </div>
       </div>
 
